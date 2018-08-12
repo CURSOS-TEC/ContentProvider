@@ -6,9 +6,59 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <GridLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:columnCount="2">
+
+            <ImageButton
+                android:id="@+id/main_activity_camera"
+                android:layout_height="150dp"
+                android:layout_width="150dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_camera">
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/main_activity_chip"
+                android:layout_height="150dp"
+                android:layout_width="150dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_chip">
+            </ImageButton>
 
 
-    <include layout="@layout/content_main" />
+            <ImageButton
+                android:id="@+id/main_activity_microphone"
+                android:layout_height="150dp"
+                android:layout_width="150dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_microphone">
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/main_activity_satellite"
+                android:layout_height="150dp"
+                android:layout_width="150dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_satellite">
+            </ImageButton>
+
+        </GridLayout>
+
+
+
+    </LinearLayout>
+
+
 
 
 </android.support.design.widget.CoordinatorLayout>
