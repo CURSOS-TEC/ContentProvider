@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/main_activity_coordinator_view"
+    android:background="@color/colorPrimaryDark">
 
     <LinearLayout
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_gravity="center"
         android:orientation="vertical"
         android:gravity="center">
 
@@ -24,15 +25,16 @@
                 android:layout_height="150dp"
                 android:layout_width="150dp"
                 android:layout_margin="10dp"
-                android:src="@drawable/ic_camera">
-            </ImageButton>
+                android:src="@drawable/ic_camera"
+                />
 
             <ImageButton
                 android:id="@+id/main_activity_chip"
                 android:layout_height="150dp"
                 android:layout_width="150dp"
                 android:layout_margin="10dp"
-                android:src="@drawable/ic_chip">
+                android:src="@drawable/ic_chip"
+                android:background="@color/transparent">
             </ImageButton>
 
 
@@ -41,7 +43,8 @@
                 android:layout_height="150dp"
                 android:layout_width="150dp"
                 android:layout_margin="10dp"
-                android:src="@drawable/ic_microphone">
+                android:src="@drawable/ic_microphone"
+                android:background="@color/transparent">
             </ImageButton>
 
             <ImageButton
@@ -49,7 +52,8 @@
                 android:layout_height="150dp"
                 android:layout_width="150dp"
                 android:layout_margin="10dp"
-                android:src="@drawable/ic_satellite">
+                android:src="@drawable/ic_satellite"
+                android:background="@color/transparent">
             </ImageButton>
 
         </GridLayout>
