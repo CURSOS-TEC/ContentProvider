@@ -1,14 +1,17 @@
 package com.soa4id.tec.shareactionsender;
 
+import android.content.ContentResolver;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -90,6 +93,25 @@ public class MainActivity extends AppCompatActivity {
                 snackMessage(" Cursor count: " +Integer.toString(cursor.getCount()));
             }
         });
+
+
+        ContentResolver resolver =  getContentResolver();
+        try {
+
+            Uri uri = Uri.parse("content://com.soa4id.tec.shareactionsender.SOAImageProvider");
+
+            Cursor cursor = resolver.query(uri,
+                    null,
+                    null,
+                    null,
+                    null);
+
+
+
+            Log.i("cursor", String.valueOf(cursor.getCount()));
+        }catch (Exception e){
+            Log.i("soaerror", e.getMessage());
+        }
 
     }
 

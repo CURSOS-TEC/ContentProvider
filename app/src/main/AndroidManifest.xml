@@ -19,6 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider android:authorities="com.soa4id.tec.shareactionsender.SOAImageProvider"
+            android:name="com.soa4id.tec.shareactionsender.SOAImageProvider"
+            android:permission="true"
+            android:readPermission="normal"
+            android:writePermission="normal"
+            android:grantUriPermissions="true"
+            android:exported="true"
+            ></provider>
+
+
     </application>
 
 </manifest>
