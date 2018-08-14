@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         mImageButtonCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.ic_camera, null);
+                Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.camera, null);
                 mDataBaseAssistant.addImageToDB(bitmap);
                 snackMessage("Camera is saved on DATA BASE");
             }
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         mImageButtonChip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.ic_chip, null);
+                Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.chip, null);
                 mDataBaseAssistant.addImageToDB(bitmap);
                 snackMessage("Chip is saved on DATA BASE");
             }
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         mImageButtonSatellite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.ic_satellite, null);
+                Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.satallite, null);
                 mDataBaseAssistant.addImageToDB(bitmap);
                 snackMessage("Satellite is saved on DATA BASE");
             }
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         mImageButtonMicrophone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.ic_microphone, null);
+                Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.microphone, null);
                 mDataBaseAssistant.addImageToDB(bitmap);
                 snackMessage("Microphone is saved on DATA BASE");
             }
@@ -90,6 +90,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Cursor cursor = mDataBaseAssistant.getAll();
+                cursor.moveToFirst();
+                byte[] array = cursor.getBlob(1);
+                Log.i("soa.cursor", String.valueOf(array.length));
                 snackMessage(" Cursor count: " +Integer.toString(cursor.getCount()));
             }
         });

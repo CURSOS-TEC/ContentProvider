@@ -59,12 +59,19 @@ public class DataBaseAssistant {
     public void addImageToDB (Bitmap image){
         byte[] imageByteArray = SOAUtils.bitmapToByte(image);
         ContentValues value = new ContentValues();
+        if(image == null){
+            Log.i("soa.image", "null");
+        }else{
+            Log.i("soa.image", String.valueOf(imageByteArray.length));
+        }
         value.put(DataBaseAssistant.KEY_IMAGE_DATA,imageByteArray);
         try {
             //this.mDb.insertOrThrow(this.mTableName,null,value);
             this.mDb.insert(this.mTableName,null,value);
+            //String insert_query ="INSERT INTO " + mTableName + " VALUES(" +  String.valueOf(imageByteArray) + ");";
+            //this.mDb.execSQL(insert_query);
         }catch (SQLException e){
-            Log.d("soa.sql", e.toString());
+            Log.i("soa.sql", e.toString());
         }
     }
 
