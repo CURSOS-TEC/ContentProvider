@@ -1,5 +1,7 @@
 package com.soa4id.tec.shareactionsender;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -19,9 +21,16 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton mImageButtonMicrophone;
     private ImageButton mImageButtonSatellite;
 
+    private DataBaseAssistant mDataBaseAssistant;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
+
+        this.mDataBaseAssistant = new DataBaseAssistant(getApplicationContext());
+
         setContentView(R.layout.activity_main);
         mCoordinatorLayout = findViewById(R.id.main_activity_coordinator_view);
         mImageButtonCamera = findViewById(R.id.main_activity_camera);
@@ -32,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         mImageButtonCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.ic_camera, null);
+                mDataBaseAssistant.addImageToDB(bitmap);
                 snackMessage("Camera is sending to content provider");
             }
         });

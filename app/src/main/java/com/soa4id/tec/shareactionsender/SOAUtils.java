@@ -8,7 +8,7 @@ import java.io.ByteArrayOutputStream;
 
 public class SOAUtils {
     /** Creates a byte array from a image, the bit map must be a png file **/
-    public byte[] bitmapToByte(Bitmap bitmap){
+    public static byte[] bitmapToByte(Bitmap bitmap){
         try{
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
@@ -21,7 +21,7 @@ public class SOAUtils {
     }
 
     /** Returns the bitmap related to some imageDate in byte[] format **/
-    public Bitmap getBitMap (byte[] imageData){
+    public static Bitmap getBitMap (byte[] imageData){
         return BitmapFactory.decodeByteArray(imageData,0,imageData.length);
     }
 

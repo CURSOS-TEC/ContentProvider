@@ -33,8 +33,7 @@
                 android:layout_height="150dp"
                 android:layout_width="150dp"
                 android:layout_margin="10dp"
-                android:src="@drawable/ic_chip"
-                android:background="@color/transparent">
+                android:src="@drawable/ic_chip">
             </ImageButton>
 
 
@@ -43,8 +42,7 @@
                 android:layout_height="150dp"
                 android:layout_width="150dp"
                 android:layout_margin="10dp"
-                android:src="@drawable/ic_microphone"
-                android:background="@color/transparent">
+                android:src="@drawable/ic_microphone">
             </ImageButton>
 
             <ImageButton
@@ -52,11 +50,16 @@
                 android:layout_height="150dp"
                 android:layout_width="150dp"
                 android:layout_margin="10dp"
-                android:src="@drawable/ic_satellite"
-                android:background="@color/transparent">
+                android:src="@drawable/ic_satellite">
             </ImageButton>
 
         </GridLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
 
 
 
