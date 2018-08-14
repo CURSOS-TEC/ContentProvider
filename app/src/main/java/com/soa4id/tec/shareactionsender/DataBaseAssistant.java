@@ -61,7 +61,8 @@ public class DataBaseAssistant {
         ContentValues value = new ContentValues();
         value.put(DataBaseAssistant.KEY_IMAGE_DATA,imageByteArray);
         try {
-            this.mDb.insertOrThrow(this.mTableName,null,value);
+            //this.mDb.insertOrThrow(this.mTableName,null,value);
+            this.mDb.insert(this.mTableName,null,value);
         }catch (SQLException e){
             Log.d("soa.sql", e.toString());
         }
